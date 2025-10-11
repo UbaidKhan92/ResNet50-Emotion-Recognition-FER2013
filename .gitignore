@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Model Files
+models/*.pt
+models/*.pth
+models/*.onnx
+
+# Dataset
+data/
+dataset/
+train/
+test/
+*.zip
+*.tar.gz
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Training
+logs/
+checkpoints/
+*.log
+
+# Distribution
+build/
+dist/
+*.egg-info/
