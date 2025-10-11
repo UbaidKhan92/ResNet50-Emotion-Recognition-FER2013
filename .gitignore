@@ -11,13 +11,10 @@ env/
 ENV/
 .venv
 
+models/Emotion_Recognition.mp4
+
 # Jupyter Notebook
 .ipynb_checkpoints/
-
-# Model Files
-models/*.pt
-models/*.pth
-models/*.onnx
 
 # Dataset
 data/
