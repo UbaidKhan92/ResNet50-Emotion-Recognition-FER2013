@@ -1,4 +1,4 @@
-# Real-Time Facial Emotion Recognition with ResNet50
+# 🎭 Real-Time Facial Emotion Recognition with ResNet50
 
 <div align="center">
 
@@ -6,121 +6,202 @@ High-performance real-time facial emotion recognition system using ResNet50 arch
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)](https://pytorch.org/)
+[![OpenCV](https://img.shields.io/badge/OpenCV-4.0+-green.svg)](https://opencv.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+[Features](#-key-features) • [Installation](#-installation) • [Usage](#-usage) • [Performance](#-performance) • [Dataset](#-dataset)
 
 </div>
 
 ---
 
-## Demo
+## 🎥 Demo
 
 <div align="center">
   <video src="https://github.com/user-attachments/assets/40519d55-06ec-432a-bed3-cc872b288833" width="300" controls></video>
+  
+  *Real-time emotion detection running at 30+ FPS*
 </div>
 
 ---
 
-## Overview
+## 📋 Overview
 
-Real-time emotion detection system that identifies 7 distinct facial emotions through webcam feeds. Built on custom ResNet50 architecture with **65.59% validation accuracy** on [FER2013 dataset](https://www.kaggle.com/datasets/msambare/fer2013).
+A production-ready system that identifies **7 distinct facial emotions** through webcam feeds in real-time. Built on custom **ResNet50 architecture** achieving **65.59% validation accuracy** on the [FER2013 dataset](https://www.kaggle.com/datasets/msambare/fer2013).
 
-**Key Features:**
-- **Real-time Processing:** 30+ FPS on GPU with optimized inference pipeline
-- **Seven Emotions:** Neutral, Happiness, Sadness, Surprise, Fear, Disgust, Anger
-- **High Accuracy:** 65.59% validation accuracy, ~80% training accuracy
-- **Production Ready:** FP16 precision, temporal smoothing, threaded capture
+### ✨ Key Features
+
+<table>
+<tr>
+<td width="50%">
+
+🚀 **Real-time Processing**
+- 30+ FPS on GPU
+- Optimized inference pipeline
+- FP16 precision support
+
+⚡ **High Performance**
+- 65.59% validation accuracy
+- ~80% training accuracy
+- Minimal latency
+
+</td>
+<td width="50%">
+
+🎯 **Seven Emotions**
+- Neutral • Happiness • Sadness
+- Surprise • Fear • Disgust • Anger
+
+🛠️ **Production Ready**
+- Temporal smoothing
+- Threaded capture
+- MediaPipe face detection
+
+</td>
+</tr>
+</table>
 
 ---
 
-## Architecture
+## 🏗️ Architecture
 
 **Model:** Custom ResNet50 with Bottleneck blocks [3, 4, 6, 3]
 
 ```
-Input (224×224×3) → Conv2dSame(7×7) → BatchNorm → ReLU → MaxPool
-→ ResBlock Layer1 (64)  → ResBlock Layer2 (128) 
-→ ResBlock Layer3 (256) → ResBlock Layer4 (512)
-→ AdaptiveAvgPool → FC(2048→512) → FC(512→7) → Softmax
+Input (224×224×3)
+    ↓
+Conv2dSame(7×7) → BatchNorm → ReLU → MaxPool
+    ↓
+ResBlock Layer 1 (64 channels)
+    ↓
+ResBlock Layer 2 (128 channels)
+    ↓
+ResBlock Layer 3 (256 channels)
+    ↓
+ResBlock Layer 4 (512 channels)
+    ↓
+AdaptiveAvgPool → FC(2048→512) → FC(512→7) → Softmax
+    ↓
+Output (7 emotion classes)
 ```
 
-**Training Setup:**
-- **Optimizer:** Adam (lr=0.001, weight_decay=0.0001)
-- **Scheduler:** ReduceLROnPlateau (factor=0.5, patience=3)
-- **Batch Size:** 64 | **Epochs:** 50
-- **Augmentation:** Horizontal flip, rotation (±15°), brightness/contrast (0.8-1.2x)
+### 🎓 Training Configuration
+
+| Parameter | Value |
+|-----------|-------|
+| **Optimizer** | Adam (lr=0.001, weight_decay=0.0001) |
+| **Scheduler** | ReduceLROnPlateau (factor=0.5, patience=3) |
+| **Batch Size** | 64 |
+| **Epochs** | 50 |
+| **Augmentation** | Flip, Rotation (±15°), Brightness/Contrast (0.8-1.2x) |
 
 ---
 
-## Performance
+## 📊 Performance
+
+<div align="center">
 
 ![Training Curves](models/training_curves.png)
 
-| Metric | Value |
-|--------|-------|
-| **Validation Accuracy** | **65.59%** |
-| Training Accuracy | ~80.00% |
-| Inference Speed (GPU) | 30+ FPS |
-| Inference Speed (CPU) | 10-15 FPS |
-| Model Parameters | ~23.5M |
-| Model Size | ~90 MB |
+**Training Progress Visualization**
+
+</div>
+
+### 📈 Metrics
+
+| Metric | Value | Description |
+|--------|-------|-------------|
+| **🎯 Validation Accuracy** | **65.59%** | FER2013 test set |
+| **📚 Training Accuracy** | **80.00%** | FER2013 train set |
+| **⚡ Speed (GPU)** | **30+ FPS** | NVIDIA GPU (FP16) |
+| **💻 Speed (CPU)** | **10-15 FPS** | Intel/AMD CPU |
+| **📦 Model Size** | **90 MB** | PyTorch .pt format |
+| **🔢 Parameters** | **~23.5M** | Trainable params |
 
 ---
 
-## Dataset
+## 📚 Dataset
 
-**[FER2013](https://www.kaggle.com/datasets/msambare/fer2013)** - Facial Expression Recognition benchmark dataset
-- **Training:** ~28,709 images
-- **Testing:** ~3,589 images
-- **Classes:** 7 emotions (Neutral, Happy, Sad, Surprise, Fear, Disgust, Anger)
-- **Resolution:** 48×48 grayscale (upscaled to 224×224 RGB)
+### [FER2013 - Facial Expression Recognition](https://www.kaggle.com/datasets/msambare/fer2013)
+
+<table>
+<tr>
+<td>
+
+**Dataset Statistics:**
+- 📊 Training: ~28,709 images
+- ✅ Testing: ~3,589 images
+- 🎭 Classes: 7 emotions
+- 📐 Resolution: 48×48 → 224×224
+
+</td>
+<td>
+
+**Emotion Distribution:**
+- 😐 Neutral
+- 😊 Happiness
+- 😢 Sadness
+- 😲 Surprise
+- 😨 Fear
+- 🤢 Disgust
+- 😠 Anger
+
+</td>
+</tr>
+</table>
+
+> **Note:** Images are grayscale 48×48 pixels, upscaled to 224×224 RGB for training.
 
 ---
 
-## Installation
+## 🚀 Installation
 
 ### Prerequisites
-- Python 3.8+
-- CUDA-compatible GPU (recommended)
-- Webcam
 
-### Setup
+```
+✓ Python 3.8+
+✓ CUDA-compatible GPU (recommended)
+✓ Webcam for real-time inference
+```
 
-1. **Clone repository**
-   ```bash
-   git clone https://github.com/yourusername/FER2013-ResNet50-Emotion-Recognition.git
-   cd FER2013-ResNet50-Emotion-Recognition
-   ```
+### Quick Setup
 
-2. **Install uv** (fast package manager)
-   ```bash
-   # Windows
-   powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
-   
-   # macOS/Linux
-   curl -LsSf https://astral.sh/uv/install.sh | sh
-   ```
+**1️⃣ Clone repository**
+```bash
+git clone https://github.com/yourusername/FER2013-ResNet50-Emotion-Recognition.git
+cd FER2013-ResNet50-Emotion-Recognition
+```
 
-3. **Create environment and install dependencies**
-   ```bash
-   uv venv
-   source venv/bin/activate  # Windows: venv\Scripts\activate
-   uv pip install -r requirements.txt
-   ```
+**2️⃣ Install uv** (fast package manager)
+```bash
+# Windows
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 
-4. **Add pre-trained model**
-   
-   Place the trained model file in the `models/` directory:
-   ```
-   models/FER_static_ResNet50_AffectNet.pt
-   ```
-   
-   > **Note:** Model file size ~90MB. Available on request or train your own using the notebook.
+# macOS/Linux
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+**3️⃣ Create environment and install dependencies**
+```bash
+uv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+uv pip install -r requirements.txt
+```
+
+**4️⃣ Add pre-trained model**
+
+Place the trained model file in the `models/` directory:
+```
+models/FER_static_ResNet50_AffectNet.pt
+```
+
+> 💡 **Tip:** Model file size ~90MB. Available on request or train your own using the notebook.
 
 ---
 
-## Usage
+## 💻 Usage
 
-### Real-Time Detection
+### 🎬 Real-Time Detection
 
 Run the emotion recognition system:
 
@@ -128,14 +209,15 @@ Run the emotion recognition system:
 python realtime_facial_analysis.py
 ```
 
-**Controls:** Press `q` to quit
+**⌨️ Controls:** Press `q` to quit
 
-**Output:**
-- Real-time video feed with emotion labels and confidence scores
-- FPS counter
-- Face bounding boxes
+**📺 Output:**
+- ✅ Real-time video feed with emotion labels
+- 📊 Confidence scores for each prediction
+- 🎯 Face bounding boxes with tracking
+- ⚡ FPS counter for performance monitoring
 
-### Training Custom Model
+### 🧪 Training Custom Model
 
 Open training notebook in Jupyter:
 
@@ -143,44 +225,57 @@ Open training notebook in Jupyter:
 jupyter notebook model_trainign_resnet.ipynb
 ```
 
-The notebook includes complete pipeline: data loading, model training, evaluation, and export.
+> **Contains:** Complete pipeline including data loading, model training, evaluation, and export.
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 FER2013-ResNet50-Emotion-Recognition/
 │
-├── models/
-│   ├── FER_static_ResNet50_AffectNet.pt
-│   └── training_curves.png
-├── realtime_facial_analysis.py
-├── model_trainign_resnet.ipynb
-├── requirements.txt
-├── .gitignore
-└── README.md
+├── 📂 models/
+│   ├── FER_static_ResNet50_AffectNet.pt    # Trained model weights
+│   └── training_curves.png                 # Training visualization
+│
+├── 🐍 realtime_facial_analysis.py          # Real-time inference script
+├── 📓 model_trainign_resnet.ipynb          # Training notebook (Colab/Jupyter)
+├── 📋 requirements.txt                     # Python dependencies
+├── 🚫 .gitignore                           # Git ignore rules
+└── 📖 README.md                            # Documentation
+
 ```
 
 ---
 
-## Technical Details
+## ⚙️ Technical Details
 
-**Image Preprocessing:**
-- Resize to 224×224 using INTER_NEAREST interpolation
-- BGR to RGB color space conversion
-- Mean normalization: [R: 91.4953, G: 103.8827, B: 131.0912]
+### 🖼️ Image Preprocessing
 
-**Performance Optimizations:**
-- **GPU:** FP16 half-precision + CuDNN auto-tuning
-- **Detection:** 50% downscaled resolution for face detection
-- **Capture:** Threaded webcam stream (non-blocking)
-- **Inference:** Temporal smoothing over 10-frame window
-- **Result:** 30+ FPS on NVIDIA GPU, ~10-15 FPS on CPU
+```python
+1. Resize to 224×224 (INTER_NEAREST)
+2. Convert BGR → RGB color space
+3. Mean normalization: [R: 91.49, G: 103.88, B: 131.09]
+4. Convert to PyTorch tensor (C×H×W)
+```
+
+### 🔧 Performance Optimizations
+
+| Optimization | Description | Benefit |
+|--------------|-------------|---------|
+| **FP16 Precision** | Half-precision on GPU | 2x faster inference |
+| **CuDNN Auto-tuning** | Optimal conv algorithms | 10-20% speedup |
+| **Downscaled Detection** | 50% resolution for face detection | 50% faster detection |
+| **Threaded Capture** | Non-blocking webcam stream | Eliminates I/O bottleneck |
+| **Temporal Smoothing** | 10-frame moving average | Stable predictions |
+
+**Result:** 30+ FPS on NVIDIA GPU • 10-15 FPS on CPU
 
 ---
 
-## Citation
+## 📖 Citation
+
+If you use this project in your research or applications, please cite:
 
 ```bibtex
 @software{fer2013_resnet50,
@@ -191,7 +286,8 @@ FER2013-ResNet50-Emotion-Recognition/
 }
 ```
 
-**FER2013 Dataset:**
+### Dataset Citation
+
 ```bibtex
 @inproceedings{goodfellow2013challenges,
   title={Challenges in representation learning},
@@ -203,13 +299,13 @@ FER2013-ResNet50-Emotion-Recognition/
 
 ---
 
-## License
+## 📜 License
 
 MIT License - see [LICENSE](LICENSE) file for details.
 
 ---
 
-## Acknowledgments
+## 🙏 Acknowledgments
 
 - **FER2013 Dataset** - ICML 2013 Challenges in Representation Learning
 - **ResNet Architecture** - He et al., "Deep Residual Learning for Image Recognition"
@@ -220,6 +316,10 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 <div align="center">
 
-**Star this repository if you find it helpful!**
+### ⭐ Star this repository if you find it helpful!
+
+**Built with ❤️ using PyTorch and ResNet50**
+
+[Report Bug](https://github.com/yourusername/FER2013-ResNet50-Emotion-Recognition/issues) • [Request Feature](https://github.com/yourusername/FER2013-ResNet50-Emotion-Recognition/issues)
 
 </div>
