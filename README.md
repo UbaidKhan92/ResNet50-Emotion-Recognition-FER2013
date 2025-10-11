@@ -68,21 +68,21 @@ A production-ready system that identifies **7 distinct facial emotions** through
 **Model:** Custom ResNet50 with Bottleneck blocks [3, 4, 6, 3]
 
 ```
-Input (224×224×3)
-    ↓
-Conv2dSame(7×7) → BatchNorm → ReLU → MaxPool
-    ↓
-ResBlock Layer 1 (64 channels)
-    ↓
-ResBlock Layer 2 (128 channels)
-    ↓
-ResBlock Layer 3 (256 channels)
-    ↓
-ResBlock Layer 4 (512 channels)
-    ↓
-AdaptiveAvgPool → FC(2048→512) → FC(512→7) → Softmax
-    ↓
-Output (7 emotion classes)
+                                            Input (224×224×3)
+                                                    ↓
+                                Conv2dSame(7×7) → BatchNorm → ReLU → MaxPool
+                                                    ↓
+                                    ResBlock Layer 1 (64 channels)
+                                                    ↓
+                                    ResBlock Layer 2 (128 channels)
+                                                    ↓
+                                    ResBlock Layer 3 (256 channels)
+                                                    ↓
+                                    ResBlock Layer 4 (512 channels)
+                                                    ↓
+                            AdaptiveAvgPool → FC(2048→512) → FC(512→7) → Softmax
+                                                    ↓
+                                        Output (7 emotion classes)
 ```
 
 ### 🎓 Training Configuration
