@@ -15,7 +15,7 @@ High-performance real-time facial emotion recognition system using ResNet50 arch
 ## Demo
 
 <div align="center">
-  <video src="https://github.com/user-attachments/assets/40519d55-06ec-432a-bed3-cc872b288833" width="600" controls></video>
+  <video src="https://github.com/user-attachments/assets/40519d55-06ec-432a-bed3-cc872b288833" width="200" controls></video>
 </div>
 
 ---
